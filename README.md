@@ -1,13 +1,11 @@
 # Landing Page Project
 
-## Table of Contents
+## Notes
 
-* [Instructions](#instructions)
+I used the provided HTML and CSS styling to start the Landing Page project.
 
-## Instructions
+I added javascript to select the section elements and use the information in those to create navigation in the header.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+I used javascript to add an eventlistener to each section to check to see if it was in the window and made it active if it was. I also added styling to the cooresponding menu item as well to indicate that it was active. I didn't add any extra styling to the active sections beyond what was already in place in the existing css (gradient background and turning on the animated circles). If you want me to, I can add more styling in that section of the css.
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+I created the scrolling rather than jumping just by using the "scroll-behavior: smooth" attribute in the html tag in the css file.  Should I have done this in a more difficult way using javascript to manually reproduce that easy behavior?
