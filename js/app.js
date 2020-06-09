@@ -13,26 +13,13 @@
  *
  */
 
-/**
- * Define Global Variables
- *
- */
-
 //create variable to contain list of all section elements
 const allSections = document.querySelectorAll('section');
 
-/**
- * End Global Variables
+//loop through each section
+allSections.forEach(section => {
 
- * Begin Main Functions
- *
-*/
-
-// build the nav
-
-//loop through each section and run function createNav
-allSections.forEach(createNav);
-function createNav(section) {
+  // build the nav
   var newLi = document.createElement("li");
   var newA = document.createElement("a");
   newA.innerHTML = (section.getAttribute("data-nav"));
@@ -52,30 +39,22 @@ function createNav(section) {
       inline: "nearest"
     });
   });
-}
 
-
-// Add class 'isActive' to section when near top of viewport
-//loop through all section elements, running addListener function for each one
-allSections.forEach(addListener);
-function addListener(section) {
+  //make sections and menu items active when scrolling
+  //comparing abs() of difference between middle of section and middle of window
   window.addEventListener('scroll', () => {
     const bbox = section.getBoundingClientRect();
-    //changed the way I choose when to make sections 'isActive'
-    //comparing abs() of difference between middle of section and middle of window
-    //if it is low enough then toggle isActive
     const winHeight = window.innerHeight;
     const midSection = ((bbox.bottom - bbox.top) / 2) + bbox.top;
-    const heightDiff = Math.abs(midSection - winHeight/2);
-    if ( heightDiff <= winHeight/2 && !section.classList.contains("isActive")) {
+    const heightDiff = Math.abs(midSection - winHeight / 2);
+    if (heightDiff <= winHeight / 2 && !section.classList.contains("isActive")) {
       section.classList.add("isActive");
-      //also add class to anchor within li in nav
       const liActive = document.getElementById(`li_${section.id}`);
       liActive.firstChild.classList.add("activeLi");
-    } else if (heightDiff > winHeight/2 && section.classList.contains("isActive")) {
+    } else if (heightDiff > winHeight / 2 && section.classList.contains("isActive")) {
       section.classList.remove("isActive");
       const liActive = document.getElementById(`li_${section.id}`);
       liActive.firstChild.classList.remove("activeLi");
     }
-  })
-}
+  });
+});

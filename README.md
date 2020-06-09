@@ -5,7 +5,7 @@
 I made some changes after initial review.
 
 ### Requested improvements
- - I had previously used a css property to achieve the scrolling effect, but I switched it to javascript to satisfy the rubric
+ - I previously used a css property to achieve the scrolling effect, but I switched it to javascript to satisfy the rubric
 
 ### Other improvements
 - Changed some functions to arrow notation
