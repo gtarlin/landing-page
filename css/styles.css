@@ -9,12 +9,6 @@
 */
 /* ---- Base Rules ---- */
 
-
-/* added to create smooth scrolling*/
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: rgb(136, 203, 171);
   background: linear-gradient(0deg, rgba(136, 203, 171, 1) 0%, rgba(0, 13, 60, 1) 100%);
@@ -79,7 +73,7 @@ section {
 
 .navbar__menu .menu__link {
   display: block;
-  padding: 1em;
+  padding: .5em;
   font-weight: bold;
   text-decoration: none;
   color: #000;
@@ -202,7 +196,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* renamed class to .isActive and turned it on and off with javascript  */
 section.isActive {
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 section.isActive .landing__container::before {
