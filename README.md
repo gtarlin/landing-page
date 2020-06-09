@@ -1,9 +1,19 @@
-# Landing Page Project
+# Landing Page Project for Udacity Front End Web Development
 
 ## Notes
 
-I replaced the scrolling mechanism.
-I had previously used a css property to achieve the effect, but I switched it to javascript to satisfy the rubric. 
+I made some changes after initial review.
+
+### Requested improvements
+ - I had previously used a css property to achieve the scrolling effect, but I switched it to javascript to satisfy the rubric
+
+### Other improvements
+- Changed some functions to arrow notation
+- Changed the method for deciding where in the scroll each section should get focus
+
+------------
+
+## Previously
 
 I used the provided HTML and CSS styling to start the Landing Page project.
 

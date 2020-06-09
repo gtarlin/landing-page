@@ -62,25 +62,17 @@ allSections.forEach(addListener);
 
 function addListener(section) {
   window.addEventListener('scroll', () => {
-    var bbox = section.getBoundingClientRect();
-    //instead should I calculate y value of centre of section BoundingClientRect
-    //and look for the one closest to the centre of the window?
-    var midSection = ((bbox.bottom - bbox.top) / 2) + bbox.top;
-    var winHeight = window.innerHeight;
-    var heightDiff = Math.abs(midSection - winHeight/2);
+    const bbox = section.getBoundingClientRect();
+    //changed the way I choose when to make sections 'isActive'
+    //comparing abs() of difference between middle of section and middle of window
+    //if it is low enough then toggle isActive
+    const winHeight = window.innerHeight;
+    const midSection = ((bbox.bottom - bbox.top) / 2) + bbox.top;
+    const heightDiff = Math.abs(midSection - winHeight/2);
     console.log(`winHeight/2: ${winHeight/2}`);
-    // console.log(`winHeight/2: ${winHeight/2}`);
-    // console.log(`${section.id}   top: ${parseInt(bbox.top)} bottom: ${parseInt(bbox.bottom)}`);
-    // console.log(`${section.id}   top: ${parseInt(bbox.top)} bottom: ${parseInt(bbox.bottom)}`);
-    // console.log(`bottom: ${parseInt(bbox.bottom)}`);
     console.log(`${section.id}   distance from centre: ${Math.abs(parseInt(heightDiff))}`);
-
-    // if ((bbox.bottom - bbox.top)/2 + bbox.top <= winHeight/2
-    // if (bbox.top <= 175 && bbox.bottom >= 175 && !section.classList.contains("isActive")) {
     console.log(`active range: ${heightDiff <= winHeight/2}`);
-
     if ( heightDiff <= winHeight/2 && !section.classList.contains("isActive")) {
-      // if (-400 <= heightDiff <= 400 && !section.classList.contains("isActive")) {
       section.classList.add("isActive");
       //also add class to anchor within li in nav
       const liActive = document.getElementById(`li_${section.id}`);
