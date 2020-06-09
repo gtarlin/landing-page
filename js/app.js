@@ -32,7 +32,6 @@ const allSections = document.querySelectorAll('section');
 
 //loop through each section and run function createNav
 allSections.forEach(createNav);
-
 function createNav(section) {
   var newLi = document.createElement("li");
   var newA = document.createElement("a");
@@ -59,7 +58,6 @@ function createNav(section) {
 // Add class 'isActive' to section when near top of viewport
 //loop through all section elements, running addListener function for each one
 allSections.forEach(addListener);
-
 function addListener(section) {
   window.addEventListener('scroll', () => {
     const bbox = section.getBoundingClientRect();
@@ -69,9 +67,6 @@ function addListener(section) {
     const winHeight = window.innerHeight;
     const midSection = ((bbox.bottom - bbox.top) / 2) + bbox.top;
     const heightDiff = Math.abs(midSection - winHeight/2);
-    console.log(`winHeight/2: ${winHeight/2}`);
-    console.log(`${section.id}   distance from centre: ${Math.abs(parseInt(heightDiff))}`);
-    console.log(`active range: ${heightDiff <= winHeight/2}`);
     if ( heightDiff <= winHeight/2 && !section.classList.contains("isActive")) {
       section.classList.add("isActive");
       //also add class to anchor within li in nav
