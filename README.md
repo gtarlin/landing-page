@@ -8,7 +8,7 @@ I made some changes after initial review.
  - I previously used a css property to achieve the scrolling effect, but I switched it to javascript to satisfy the rubric
 
 ### Other improvements
-- Changed some functions to arrow notation
+- Changed some functions to arrow notation and consolidated some functions
 - Changed the method for deciding where in the scroll each section should get focus
 
 ------------

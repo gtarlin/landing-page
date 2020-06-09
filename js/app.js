@@ -16,7 +16,6 @@
 //create variable to contain list of all section elements
 const allSections = document.querySelectorAll('section');
 
-//loop through each section
 allSections.forEach(section => {
 
   // build the nav
